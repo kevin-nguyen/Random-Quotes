@@ -1,0 +1,33 @@
+body {
+    position: relative;
+}
+
+.bg-color {
+    background-color: #75C9C8;
+}
+
+#quote-container {
+    position: absolute;
+    top: 35vh;
+    padding: 0 auto;
+    
+}
+
+#quote-box {
+    border-radius: 10px;
+    background-color: ghostwhite;
+    padding: 35px;
+}
+
+#quote {
+    font-size: 3rem;
+}
+
+#author {
+    font-size: 2rem;
+    padding-top: 15px;
+}
+
+#controls {
+    padding-top: 20px;
+}
