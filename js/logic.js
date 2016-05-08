@@ -28,5 +28,8 @@ $(document).ready(function() {
     }
 
     requestQuote();
+    $('#refresh').on('click', function(event) {
+        requestQuote();
+    })
     
 });
