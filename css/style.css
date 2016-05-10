@@ -2,6 +2,11 @@ body {
     position: relative;
 }
 
+.heading-text-style {
+    text-shadow: black 0 0 3px;
+    color: white;
+}
+
 .bg-color {
     background-color: #75C9C8;
 }
@@ -17,6 +22,7 @@ body {
     border-radius: 10px;
     background-color: ghostwhite;
     padding: 35px;
+    box-shadow: 0 0 25px black;
 }
 
 #quote {
