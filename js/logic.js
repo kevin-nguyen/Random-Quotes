@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    var quote, author;
+    var quote, author, index;
     var quoteStack = [];
 
     function requestQuote() {
@@ -16,11 +16,13 @@ $(document).ready(function() {
         })
         .done(function(response, textStatus, jqXHR) {
             quoteStack.push(response);
+
+            index = quoteStack.length - 1;
             quote = response.quote;
             author = response.author;
 
             $("#quote").text(quote);
-            $("#author").text(author);
+            $("#author").text(author).prepend("&mdash; ");
         })
         .fail(function(jqXHR, textStatus, errorThrown) {
 
@@ -28,8 +30,44 @@ $(document).ready(function() {
     }
 
     requestQuote();
+
     $('#refresh').on('click', function(event) {
-        requestQuote();
-    })
-    
+        requestQuote();        
+        $('#prev').removeClass('disabled');
+        $('#next').addClass('disabled');
+    });
+
+    $('#prev').on('click', function(event) {
+        if (!$('#prev').hasClass('disabled')) {
+            index -= 1;
+
+            if (index >= 0) {
+                quote = quoteStack[index].quote;
+                author = quoteStack[index].author;
+
+                $("#quote").text(quote);
+                $("#author").text(author).prepend("&mdash; ");
+            }
+
+            $('#prev').toggleClass('disabled', (index) === 0);
+            $('#next').toggleClass('disabled', (index) === quoteStack.length - 1);
+        }   
+    });
+
+    $('#next').on('click', function(event) {
+        if (!$('#next').hasClass('disabled')) {
+            index += 1;
+
+            if (index >= 0 && index < quoteStack.length) {
+                quote = quoteStack[index].quote;
+                author = quoteStack[index].author;
+                
+                $("#quote").text(quote);
+                $("#author").text(author).prepend("&mdash; ");
+            } 
+
+            $('#prev').toggleClass('disabled', (index) === 0);
+            $('#next').toggleClass('disabled', (index) === quoteStack.length - 1);
+        }        
+    });
 });
