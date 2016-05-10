@@ -12,10 +12,9 @@ body {
 }
 
 #quote-container {
-    position: absolute;
-    top: 35vh;
-    padding: 0 auto;
-    
+    position: static;
+    padding: 0 25px 25px;
+    margin: 15vh auto;
 }
 
 #quote-box {
@@ -36,4 +35,10 @@ body {
 
 #controls {
     padding-top: 20px;
+}
+
+@media (max-width: 768px) {
+    #quote-container {
+        margin-top: 0;
+    }
 }
