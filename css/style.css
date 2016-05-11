@@ -2,13 +2,17 @@ html, body, div {
     position: relative;
 }
 
-.heading-text-style {
-    text-shadow: black 0 0 3px;
-    color: white;
+body {
+    background-color: white;
+    -ms-transition: background-color 1.5s ease;
+    -moz-transition: background-color 1.5s ease;
+    -webkit-transition: background-color 1.5s ease;
+    transition: background-color 1.5s ease;
 }
 
-.bg-color {
-    background-color: #75C9C8;
+.heading-text-style {
+    
+    color: white;
 }
 
 #quote-container {
@@ -42,6 +46,12 @@ html, body, div {
     left: 15px;
 }
 
+.fa, .glyphicon, #quote, #author {
+    -ms-transition: color 1.5s ease;
+    -moz-transition: color 1.5s ease;
+    -webkit-transition: color 1.5s ease;
+    transition: color 1.5s ease;
+}
 
 @media (max-width: 768px) {
     #quote-container {
