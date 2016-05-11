@@ -23,6 +23,11 @@ $(document).ready(function() {
 
             $("#quote").text(quote);
             $("#author").text(author).prepend("&mdash; ");
+
+            var encodeQuote ='"' + encodeURIComponent(quote) + '"';
+            var encodeAuthor = " " + encodeURIComponent(author);
+            var uri = "https://twitter.com/intent/tweet?hashtags=QuoteOfTheDay&text=" + encodeQuote + encodeAuthor;
+            $(".tweet").attr('href', uri);
         })
         .fail(function(jqXHR, textStatus, errorThrown) {
 
@@ -47,6 +52,11 @@ $(document).ready(function() {
 
                 $("#quote").text(quote);
                 $("#author").text(author).prepend("&mdash; ");
+
+                var encodeQuote ='"' + encodeURIComponent(quote) + '"';
+                var encodeAuthor = " " + encodeURIComponent(author);
+                var uri = "https://twitter.com/intent/tweet?hashtags=QuoteOfTheDay&text=" + encodeQuote + encodeAuthor;
+                $(".tweet").attr('href', uri);
             }
 
             $('#prev').toggleClass('disabled', (index) === 0);
@@ -64,6 +74,11 @@ $(document).ready(function() {
                 
                 $("#quote").text(quote);
                 $("#author").text(author).prepend("&mdash; ");
+
+                var encodeQuote ='"' + encodeURIComponent(quote) + '"';
+                var encodeAuthor = " " + encodeURIComponent(author);
+                var uri = "https://twitter.com/intent/tweet?hashtags=QuoteOfTheDay&text=" + encodeQuote + encodeAuthor;
+                $(".tweet").attr('href', uri);
             } 
 
             $('#prev').toggleClass('disabled', (index) === 0);
