@@ -31,9 +31,17 @@ $(document).ready(function() {
         $('#quote').css('color', randomColor('fullRandom'));
         $('#author').css('color', randomColor('fullRandom'));
 
-        if (! $('#prev').hasClass('disabled')) $('#prev').css('color', backgroundColor);
-        if (! $('#next').hasClass('disabled')) $('#next').css('color', backgroundColor);
+        if (! $('#prev').hasClass('disabled')) {
+            $('#prev').css('color', backgroundColor);
+        } else {
+            $('#prev').css('color', 'darkgrey');
+        }
 
+        if (! $('#next').hasClass('disabled'))  {
+            $('#next').css('color', backgroundColor);
+        } else {
+            $('#next').css('color', 'darkgrey');
+        }
     }
 
     function drawText() {
